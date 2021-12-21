@@ -91,6 +91,8 @@ pre {
         rgba(114, 151, 231, 0.7) 100%);
     margin: 20px;
     padding: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .code-box h2 {
