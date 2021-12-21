@@ -1,6 +1,6 @@
 :root {
     --highlight: #a0f750;
-    --dark: #393a22;
+    --dark: #202013;
     --light: #7297e7;
     --text: #ffffff;
 }
@@ -60,7 +60,8 @@ footer {
 
 .columns {
     flex: 1 0 100%;
-    transition: flex-basis 500ms linear;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
 .code-box {
@@ -69,11 +70,67 @@ footer {
     justify-content: flex-start;
     min-height: 100%;
     outline: 2px dashed var(--text);
+    padding: 10px;
+    margin: 10px;
 }
 
 .code-box h2 {
     border: 1px solid var(--text);
     margin: -20px 0 10px 0;
     border-radius: 10px;
+    position: relative;
+    background-color: var(--dark);
 }
 
+pre {
+    white-space: pre-wrap;
+    overflow: auto;
+    border-radius: 10px;
+    background-image: linear-gradient(
+        rgba(114, 151, 231, 0.2) 0%,
+        rgba(114, 151, 231, 0.7) 100%
+    );
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 15px;
+}
+
+.code-box h2 {
+    border: 1px solid var(--text);
+    margin: -25px 0 10px 0;
+    border-radius: 10px;
+    position: relative;
+    background-color: var(--dark);
+    transition: all 0.5s ease-in-out;
+    padding: 5px;
+}
+
+.code-box:hover,
+.code-box:hover h2 {
+    box-shadow: inset 0px 0px 8px rgba(114, 151, 231, 1), 0 0 15px rgba(114, 151, 231, 1);
+}
+
+::selection {
+    background-color: var(--highlight);
+    color: var(--dark);
+}
+
+.code-box pre {
+    user-select: all;
+    flex-grow: 1
+}
+
+@media screen and (min-width:768px) {
+    .columns {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .columns {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+    }
+}
